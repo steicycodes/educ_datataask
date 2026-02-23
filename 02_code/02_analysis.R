@@ -111,3 +111,9 @@ modelsummary(
   title = "Table 3: Impact on Secondary Life Outcomes",
   output = paste0(tabfig_out, "table3_secondary.tex")
 )
+
+#----------Additional test
+
+feols(dropout ~ treatment * yob | year + stratum, 
+      data = merged, 
+      cluster = ~school_id)

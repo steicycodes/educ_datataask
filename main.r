@@ -1,16 +1,19 @@
 # ------ Setup
 # Ensure reproducibility with renv
-# renv::restore() # Uncomment this to restore my versions of packages
+# Uncomment this to restore my versions of packages
+# renv::restore() 
+
 
 library(tidyverse)   # Data manipulation & ggplot2
 library(modelsummary) # Professional tables (Balance & Regressions)
 library(fixest)       # Fast fixed-effects and clustered SEs
 library(kableExtra)   # Table formatting for PDF
+library(gt) # More table formatting
 
 # ------ Paths
 # Using relative paths so the code runs on any machine
 data_raw    <- "01_data/raw/"
-data_dirty  <- "01_data/derived/"
+data_clean  <- "01_data/clean/"
 tabfig_out    <- "03_output/"
 
 # ------ Run Scripts

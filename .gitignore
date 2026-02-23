@@ -1,0 +1,9 @@
+# Ignore raw data
+01_data/raw/*
+
+# Ignore R environment files
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/staging/

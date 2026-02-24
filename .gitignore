@@ -1,9 +1,11 @@
-# Ignore raw data
-01_data/raw/*
-
-# Ignore R environment files
-.Rhistory
-.RData
-.Ruserdata
-renv/library/
-renv/staging/
+# LaTeX auxiliary files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.toc
+*.synctex.gz
+*.pdf
+*.bbl
+*.blg
+*.out

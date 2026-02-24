@@ -14,8 +14,10 @@ Language: R (utilizing fixest for high-dimensional fixed effects and ggplot2 for
 * Heterogeneity Analysis: Testing for differential impacts by gender and age cohort.
 
 # 📂 Repository Structure
-01_data/: Raw school and student-level CSV files.
-02_code/: R scripts for data cleaning, balance checks, and regression analysis.03_output/: Final tables (built with gt) and descriptive graphs.
+
+* 01_data/: Raw school and student-level CSV files.
+* 02_code/: R scripts for data cleaning, balance checks, and regression analysis.
+* 03_output/: Final tables (built with gt) and descriptive graphs.
 
 # 🚀 How to Reproduce
 1. Clone the repository: git clone https://github.com/steicycodes/educ_datataask.git

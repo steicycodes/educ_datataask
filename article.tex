@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{tabularray}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{float}
+
+\title{Reducing Student Dropout and Addressing Gender Gaps: An Impact Evaluation}
+\author{Steicy Lopez}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Executive Summary}
+This brief evaluates the impact of an in-kind transfer program on secondary life outcomes for students over a five-year period using a matched-pair randomized controlled trial across 82 school strata. We find that the intervention successfully reduced student dropout by 4.0 percentage points, while also significantly decreasing teen pregnancy among female students by 4.1 percentage points and reducing early marriage across the full sample by 1.7 percentage points. Despite these positive overall outcomes, a severe baseline gender disparity persists, with females exhibiting a 7.6 percentage point higher dropout rate than males. Because the treatment reduced dropout overall but did not close this specific gap, we conclude that while in-kind transfers meaningfully reduce early dropout and delay early family formation, future iterations of this policy must explicitly target at-risk female students to maximize demographic and educational returns.
+
+\section*{2. Background \& Motivation}
+
+High dropout rates in developing contexts are a critical barrier to economic mobility. Leaving school early is tightly coupled with adverse secondary life outcomes, including lower lifetime earnings, early marriage, and early fertility.
+
+Educational interventions, such as in-kind transfers, aim to alter household decision-making by reducing the binding costs of schooling. By keeping students in the classroom, these programs theoretically increase the opportunity cost of early family formation. Therefore, school retention is not just an educational goal, but a primary pathway to improving long-term demographic outcomes.
+
+\section*{3. Program Description}
+The evaluated program subsidized the cost of education by providing in-kind transfers to public school students from 2010 to 2012.
+
+\begin{itemize}
+    \item \textbf{Target Population:} The intervention targeted the cohort of children enrolled in grade 6 at the onset of the program.
+    \item \textbf{Duration:} Subsidies were delivered at the start of every school year for three years, contingent on the student remaining enrolled in school.
+    \item \textbf{Assignment:} The treatment was randomized at the school level using a pairwise matched-pair design.
+\end{itemize}
+
+\section*{4. Data \& Empirical Strategy}
+We estimate Intent-to-Treat (ITT) effects utilizing baseline data and two follow-up surveys (Year 3 and Year 5). Our unit of analysis is the individual student, tracking the original 6th-grade cohort ($N = 19,308$) over a 5-year panel.
+
+We estimate the following fixed-effects model:
+\begin{equation}
+Y_{ist} = \alpha + \beta \text{Treatment}_s + \gamma X_{i} + \delta_t + \theta_s + \varepsilon_{ist}
+\end{equation}
+
+Where $Y_{ist}$ is the outcome for student $i$ in school stratum $s$ at time $t$. $\text{Treatment}_s$ is the school-level assignment indicator. For our control variables, we include baseline student gender ($X_i$) to correct for observed baseline imbalances. To account for the pairwise randomization design, we include stratum fixed effects ($\theta_s$), alongside year fixed effects ($\delta_t$). Standard errors are clustered at the student level to account for repeated observations in the panel. As a post-estimation robustness test, we run interaction models to test for heterogeneous treatment effects by gender and cohort age.
+
+
+\section*{5. Descriptive Patterns}
+Visualizing the raw data highlights two primary dynamics:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{03_output/fig1_dropout_time.png}
+    \caption{Dropout by Year: Treatment schools maintained lower dropout rates through the study period. Visually, the divergence between treatment and control groups emerges by the end of the intervention in Year 3 and persists even two years after the subsidies ended in Year 5.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{03_output/fig2_dropout_gender.png}
+    \caption{Dropout by Gender: A stark baseline gender gap is evident. While the treatment lowers the overall dropout level for both groups, the structural gap between male and female dropout rates remains parallel.}
+\end{figure}
+
+\section*{6. Main Results: Significant Effects}
+Check Apprendix for full results.
+
+\paragraph{A. Dropout}
+The program significantly reduced the probability of dropout by 4.0 percentage points ($p < 0.001$). As illustrated in Figure 1, this represents an average pooled effect that indicates long-term student retention rather than just a temporary delay in school evasion.
+
+\paragraph{B. Gender Gaps}
+We identify a severe underlying demographic gap: female students have a 7.6 percentage point higher baseline dropout rate than their male counterparts ($p < 0.001$). Heterogeneity analysis indicates the treatment effect does not statistically differ by gender; the program successfully keeps both boys and girls in school, but it does not independently close the existing gender gap.
+
+\paragraph{C. Teen Pregnancy}
+When restricting the sample to female students ($N = 8,931$), the ITT estimates show that the program significantly reduced the likelihood of teen pregnancy by 4.1 percentage points ($p < 0.001$).
+
+\paragraph{D. Marriage}
+Evaluating the full sample ($N = 17,781$), the intervention reduced the likelihood of early marriage by 1.7 percentage points ($p < 0.01$). These effects closely mirror the dropout reduction, strongly suggesting that continued schooling directly delays early family formation.
+
+\section*{7. Model Robustness \& Internal Validity}
+Because assignment was randomized within matched pairs, the estimated effects can be interpreted causally. Baseline balance checks confirm that treatment and control schools were identical across key dimensions, including average baseline scores, urban location, teacher ratios, and infrastructure, with no statistically significant differences ($p > 0.10$ for all variables).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{03_output/table1_balance.png}
+\end{figure}
+
+Furthermore, student cohorts were broadly comparable at baseline across age and geographic distribution. We did, however, identify and control for a significant imbalance in the proportion of female students. The main treatment effect on dropout remains robust at -0.040 when controlling for this imbalance. The inclusion of stratum fixed effects ensures that all treatment comparisons are made strictly between the paired comparable schools.
+
+\section*{8. External Validity \& Policy Implications}
+While the 4.0 percentage point reduction in dropout is robust internally, generalizability is context-dependent. These results are most likely to replicate in similar low-income settings where household liquidity constraints and school costs are the primary binding barriers to attendance.
+
+In-kind transfers are a highly effective, evidence-based tool for reducing student dropout and have massive positive spillover effects on demographic trajectories, notably reducing teen pregnancy and early marriage. However, because female students face a 7.6 percentage point baseline disadvantage in retention, education policy must be deliberately targeted. To maximize social returns, future iterations of this program should explicitly offset the elevated opportunity costs female students face.
+
+\newpage
+
+\section*{9. Conclusion}
+Investing in schooling generates clear educational benefits, significantly reducing dropout by 4.0 percentage points over a five-year horizon. It also acts as an effective demographic intervention, reducing teen pregnancy by 4.1 percentage points and marriage by 1.7 percentage points. Policymakers should confidently scale in-kind transfer programs while recalibrating their targeting mechanisms to protect the most vulnerable, at-risk demographics.
+
+
+\section*{Full Results}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{03_output/table2_results.png}
+\end{figure}
+
+\begin{center}[h]
+    \includegraphics[width=1\textwidth]{03_output/table3_secondary.png}
+\end{center}
+
+\end{document}

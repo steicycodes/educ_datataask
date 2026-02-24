@@ -3,6 +3,7 @@
 # Uncomment this to restore my versions of packages
 # renv::restore() 
 
+# CHAT GPT LINK https://chatgpt.com/share/699cf07a-9394-8004-9cb7-174656af0292
 
 library(tidyverse)   # Data manipulation & ggplot2
 library(modelsummary) # Professional tables (Balance & Regressions)

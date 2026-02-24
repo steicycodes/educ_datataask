@@ -86,9 +86,16 @@ modelsummary(
   list("Base ITT" = m1, "Controlled ITT" = m2, "Heterogeneity" = m3),
   stars = TRUE,
   gof_omit = "AIC|BIC|Log|RMSE",
-  title = "Table 2: Impact of Intervention on Student Dropout",
-  output = paste0(tabfig_out, "table2_results.png") # Save directly to output
-)
+  output = "gt" # This is the magic argument
+) %>%
+  tab_header(
+    title = md("**Table 2: Impact of Intervention on Student Dropout**")
+  ) %>%
+  tab_options(
+    table.width = pct(80) # Adjusts the width so it isn't too squished
+  ) %>%
+  gtsave(filename = paste0(tabfig_out, "table2_results.png"))
+
 # Pregnancy
 m4 <- feols(pregnant ~ treatment | year + stratum,
     data = filter(merged, sex == 2), 
@@ -100,6 +107,7 @@ m5 <- feols(married ~ treatment + sex | year + stratum,
             cluster = ~student_id)
 
 # Putting these together
+# Table 3
 modelsummary(
   list(
     "Dropout (All)" = m2, 
@@ -108,9 +116,15 @@ modelsummary(
   ),
   stars = TRUE,
   gof_omit = "AIC|BIC|Log|RMSE",
-  title = "Table 3: Impact on Secondary Life Outcomes",
-  output = paste0(tabfig_out, "table3_secondary.png")
-)
+  output = "gt"
+) %>%
+  tab_header(
+    title = md("**Table 3: Impact on Secondary Life Outcomes**")
+  ) %>%
+  tab_options(
+    table.width = pct(80)
+  ) %>%
+  gtsave(filename = paste0(tabfig_out, "table3_secondary.png"))
 
 #----------Additional test
 

@@ -2,7 +2,12 @@
 This repository contains a complete data task evaluating a school-based in-kind transfer program using a matched-pair Randomized Controlled Trial (RCT). The analysis investigates the program's effect on student dropout, teen pregnancy, and early marriage over a five-year horizon.
 
 # 📌 Project Overview
-The study evaluates a three-year intervention (2010–2012) targeting a cohort of 6th-grade students in public schools. Utilizing pairwise randomization at the school level, the study tracks outcomes at the end of the intervention (Year 3) and two years post-program (Year 5).Key FindingsDropout Reduction: The intervention reduced student dropout by 4.0 percentage points ($p < 0.001$).+1Demographic Spillovers: Significant reductions were observed in teen pregnancy (4.1 pp) and early marriage (1.7 pp).Gender Disparity: While the program was effective for all students, a structural 7.6 pp gender gap in dropout persists.
+The study evaluates a three-year intervention (2010–2012) targeting a cohort of 6th-grade students in public schools. Utilizing pairwise randomization at the school level, the study tracks outcomes at the end of the intervention (Year 3) and two years post-program (Year 5). 
+
+## Key Findings
+* Dropout Reduction: The intervention reduced student dropout by 4.0 percentage points ($p < 0.001$).
+* Demographic Spillovers: Significant reductions were observed in teen pregnancy (4.1 pp) and early marriage (1.7 pp).
+* Gender Disparity: While the program was effective for all students, a structural 7.6 pp gender gap in dropout persists.
 
 # 🛠 Tech Stack & Methods
 Language: R (utilizing fixest for high-dimensional fixed effects and ggplot2 for visualizations).

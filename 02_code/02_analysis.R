@@ -66,7 +66,7 @@ balance_results %>%
   tab_source_note(
     source_note = md("*Note: Standard errors in parentheses. Significance levels: * p < 0.10, ** p < 0.05, *** p < 0.01*")
   ) %>%
-  gtsave(filename = paste0(tabfig_out, "table1_balance.tex"))
+  gtsave(filename = paste0(tabfig_out, "table1_balance.png"))
 
 #-- Main analysis
 
@@ -87,7 +87,7 @@ modelsummary(
   stars = TRUE,
   gof_omit = "AIC|BIC|Log|RMSE",
   title = "Table 2: Impact of Intervention on Student Dropout",
-  output = paste0(tabfig_out, "table2_results.tex") # Save directly to output
+  output = paste0(tabfig_out, "table2_results.png") # Save directly to output
 )
 # Pregnancy
 m4 <- feols(pregnant ~ treatment | year + stratum,
@@ -109,7 +109,7 @@ modelsummary(
   stars = TRUE,
   gof_omit = "AIC|BIC|Log|RMSE",
   title = "Table 3: Impact on Secondary Life Outcomes",
-  output = paste0(tabfig_out, "table3_secondary.tex")
+  output = paste0(tabfig_out, "table3_secondary.png")
 )
 
 #----------Additional test
